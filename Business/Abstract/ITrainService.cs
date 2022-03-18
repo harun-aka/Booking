@@ -8,6 +8,6 @@ namespace Business.Abstract
 {
     public interface ITrainService
     {
-        TrainTicketBookingResponse BookTrainTickets(TrainTicketBookingRequest trainTicketBookingRequest);
+        DataResult<TrainTicketBookingResponse> BookTrainTickets(TrainTicketBookingRequest trainTicketBookingRequest);
     }
 }

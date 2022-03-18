@@ -19,7 +19,12 @@ namespace WebAPI.Controller
         public IActionResult BookTrainTickets(TrainTicketBookingRequest trainTicketBookingRequest)
         {
             var result = _trainService.BookTrainTickets(trainTicketBookingRequest);
-            return Ok(result);
+            if(result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
+            
         }
     }
 }
