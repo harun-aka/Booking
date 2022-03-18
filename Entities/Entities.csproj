@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,16 +6,15 @@
 
   <ItemGroup>
     <Compile Remove="Abstract\**" />
+    <Compile Remove="Concrete\**" />
     <EmbeddedResource Remove="Abstract\**" />
+    <EmbeddedResource Remove="Concrete\**" />
     <None Remove="Abstract\**" />
+    <None Remove="Concrete\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Concrete\" />
   </ItemGroup>
 
 </Project>

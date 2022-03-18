@@ -1,8 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BusinessAspects\**" />
+    <Compile Remove="CCS\**" />
+    <Compile Remove="ValidationRules\**" />
+    <EmbeddedResource Remove="BusinessAspects\**" />
+    <EmbeddedResource Remove="CCS\**" />
+    <EmbeddedResource Remove="ValidationRules\**" />
+    <None Remove="BusinessAspects\**" />
+    <None Remove="CCS\**" />
+    <None Remove="ValidationRules\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.1.0" />
@@ -15,14 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BusinessAspects\" />
-    <Folder Include="CCS\" />
-    <Folder Include="ValidationRules\FluentValidation\" />
   </ItemGroup>
 
 </Project>

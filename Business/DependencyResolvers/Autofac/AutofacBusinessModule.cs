@@ -1,13 +1,9 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
-using Business.CCS;
 using Business.Concrete;
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
-using Core.Utilities.Security.JWT;
-using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -20,7 +16,7 @@ namespace Business.DependencyResolvers.Autofac
         protected override void Load(ContainerBuilder builder)
         {
 
-            builder.RegisterType<ProductManager>().As<ITrainService>().SingleInstance();
+            builder.RegisterType<TrainManager>().As<ITrainService>().SingleInstance();
             
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

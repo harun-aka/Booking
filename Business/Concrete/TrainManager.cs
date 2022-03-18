@@ -38,6 +38,7 @@ namespace Business.Concrete
                     arrengementDetails.KisiSayisi = trainTicketBookingRequest.RezervasyonYapilacakKisiSayisi > availableSeatCount ? availableSeatCount : trainTicketBookingRequest.RezervasyonYapilacakKisiSayisi;
                     trainTicketBookingResponse.YerlesimAyrinti.Add(arrengementDetails);
                     trainTicketBookingRequest.RezervasyonYapilacakKisiSayisi -= arrengementDetails.KisiSayisi;
+                    arrayIndex++;
                 }
                 return trainTicketBookingResponse;
             }

@@ -15,27 +15,11 @@ namespace WebAPI.Controller
         {
             _trainService = trainService;
         }
-        //[HttpGet("getall")]
-        //public IActionResult GetAll()
-        //{
-
-        //    //var result = _productService.GetAll();
-        //    //if (result.Success)
-        //    //{
-        //    //    return Ok(result);
-        //    //}
-        //    //return BadRequest(result);
-
-        //}
         [HttpPost("booktraintickets")]
         public IActionResult BookTrainTickets(TrainTicketBookingRequest trainTicketBookingRequest)
         {
             var result = _trainService.BookTrainTickets(trainTicketBookingRequest);
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
+            return Ok(result);
         }
     }
 }
